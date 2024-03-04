@@ -8,8 +8,6 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { LoginComponent } from './components/layout/login/login.component';
 import { ComponentsModule } from './components/components.module';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
