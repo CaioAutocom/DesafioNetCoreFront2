@@ -14,6 +14,8 @@ import { RouterModule }   from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTableModule } from '@angular/material/table';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 const modules = [
@@ -31,7 +33,9 @@ const modules = [
     MatExpansionModule,
     MatTooltipModule,
     RouterModule,
-    MatTableModule
+    MatTableModule,
+    MatProgressBarModule,
+    MatTabsModule
 ]
 @NgModule({
     imports:modules,

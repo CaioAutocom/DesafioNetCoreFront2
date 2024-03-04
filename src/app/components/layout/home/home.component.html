@@ -41,9 +41,11 @@
                     <a mat-list-item routerLink="#">Editar</a>
                 </mat-nav-list>
             </mat-expansion-panel>
-            <mat-expansion-panel [class.mat-elevation-z0]="true">
+            <mat-expansion-panel [class.mat-elevation-z0]="true" >
+      
                 <mat-expansion-panel-header>
-                    Produtos
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+                    <span style="bottom: 0;">Produtos</span>
                 </mat-expansion-panel-header>
                 <mat-nav-list>
                     <a mat-list-item routerLink="/home/table">Consultar</a>

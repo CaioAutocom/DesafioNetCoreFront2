@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './table.component.scss'
 })
 export class TableComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSourcess = ELEMENT_DATA;
+  @Input({required: true}) columns: string[] = [];
+  @Input({required: true}) data: any[] = [];
 }
 
 export interface PeriodicElement {
