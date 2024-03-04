@@ -4,7 +4,7 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
 
   <p >
-    <mat-icon aria-hidden="false" fontIcon="email"></mat-icon>
+    <mat-icon appResolveIconAlignment aria-hidden="false" fontIcon="email" ></mat-icon>
     <mat-form-field >
      
       <input  type="text" matInput placeholder="Username" formControlName="username">  
@@ -12,7 +12,7 @@
   </p>
 
   <p>
-    <mat-icon aria-hidden="false" fontIcon="key"></mat-icon>
+    <mat-icon appResolveIconAlignment  aria-hidden="false" fontIcon="key"></mat-icon>
     <mat-form-field>
       <input  type="password" matInput placeholder="Password" formControlName="password">
     </mat-form-field>
@@ -24,7 +24,7 @@
 
   <div class="button icon-text">
     
-    <button type="submit" mat-raised-button color="primary"><mat-icon aria-hidden="false" fontIcon="lock_open"></mat-icon>Login</button>
+    <button type="submit" mat-raised-button color="primary"><mat-icon ResolveIconAlignmentDirective aria-hidden="false" fontIcon="lock_open"></mat-icon>Login</button>
   </div>
 
 </form>
