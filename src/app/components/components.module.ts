@@ -1,8 +1,9 @@
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AngularMaterialModule } from "../angular-material/angular-material.module";
-import { HomeComponent } from './Home/home.component';
-import { SidebarComponent } from './Layout/sidebar/sidebar.component';
+import { HomeComponent } from "./layout/home/home.component";
+import { SidebarComponent } from "./layout/sidebar/sidebar.component";
+import { AngularMaterialModule } from "./angular-material/angular-material.module";
+
 
 const modules = [
     AngularMaterialModule,
