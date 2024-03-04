@@ -4,8 +4,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
-
-
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +13,7 @@ import { MatListModule } from '@angular/material/list';
 import { RouterModule }   from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTableModule } from '@angular/material/table';
 
 
 const modules = [
@@ -31,7 +30,8 @@ const modules = [
     MatListModule,
     MatExpansionModule,
     MatTooltipModule,
-    RouterModule
+    RouterModule,
+    MatTableModule
 ]
 @NgModule({
     imports:modules,

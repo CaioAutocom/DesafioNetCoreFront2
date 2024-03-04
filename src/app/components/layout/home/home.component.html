@@ -1,4 +1,3 @@
-
 <mat-toolbar color="primary">
     <button mat-icon-button (click)="sidenav.toggle()" matTooltip="Menu">
         <mat-icon>menu</mat-icon>
@@ -49,14 +48,14 @@
                     Produtos
                 </mat-expansion-panel-header>
                 <mat-nav-list>
-                    <a mat-list-item routerLink="#">Spring</a>
-                    <a mat-list-item routerLink="#">Hibernate</a>
-                    <a mat-list-item routerLink="#">Struts</a>
+                    <a mat-list-item routerLink="/home/table">Consultar</a>
+                    <a mat-list-item routerLink="#">Adicionar</a>
+                    <a mat-list-item routerLink="#">Editar</a>
                 </mat-nav-list>
             </mat-expansion-panel>
             <div class="align-bottom">
                 <mat-divider></mat-divider>
-                <mat-expansion-panel [class.mat-elevation-z0]="true">
+                <mat-expansion-panel [class.mat-elevation-z8]="true">
                     <mat-expansion-panel-header>
                         <mat-icon>account_circle</mat-icon>Minha Conta
                     </mat-expansion-panel-header>
@@ -70,11 +69,7 @@
             </div>
         </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
-        <router-outlet>
-            <div class="app-sidenav-content">
-                Components open here
-            </div>
-        </router-outlet>
+    <mat-sidenav-content class="app-sidenav-content ">
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container> 

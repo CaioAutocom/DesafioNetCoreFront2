@@ -3,20 +3,20 @@
 }
 
 .app-container {
-    height: 90%;
+    height: 93vh;
     margin: 0;
-}  
+}
+
 .app-sidenav {
     width: 230px;
 }
-.app-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-} 
 
-.align-bottom{
+.app-sidenav-content {
+    padding: 5px;
+    background-color: #EEEEEE;
+}
+
+.align-bottom {
     position: absolute;
     bottom: 0;
     width: 100%;
