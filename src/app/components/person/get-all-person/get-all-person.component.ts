@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Tab } from '../../layout/tab-menu/tab-menu.component';
-import { TableComponent } from '../../layout/table/table.component';
 
 @Component({
   selector: 'app-get-all-person',
@@ -14,10 +12,4 @@ export class GetAllPersonComponent {
     { id: 2, name: 'Jane Doe', age: 25 },
     // mais dados...
   ];
-
-  tabs: Tab[] = [
-    { title: 'Buscar Todas', component: TableComponent  },
-    // Adicione mais abas conforme necessário
-  ];
-  
 }
