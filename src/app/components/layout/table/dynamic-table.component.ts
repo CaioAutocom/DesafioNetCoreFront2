@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrl: './table.component.scss'
+  templateUrl: './dynamic-table.component.html',
+  styleUrl: './dynamic-table.component.scss'
 })
-export class TableComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSourcess = ELEMENT_DATA;
+export class DynamicTableComponent {
+  @Input({required: true}) columns: string[] = [];
+  @Input({required: true}) data: any[] = [];
 }
 
 export interface PeriodicElement {
