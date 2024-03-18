@@ -16,6 +16,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 const modules = [
@@ -35,7 +36,8 @@ const modules = [
     RouterModule,
     MatTableModule,
     MatProgressBarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatFormFieldModule
 ]
 @NgModule({
     imports:modules,

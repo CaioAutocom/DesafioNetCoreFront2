@@ -3,13 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/layout/login/login.component';
 import { HomeComponent } from './components/layout/home/home.component';
 import { GetAllPersonComponent } from './components/person/get-all-person/get-all-person.component';
+import { FormPersonComponent } from './components/person/form-person/form-person.component';
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent,
   children: [
-    { path: 'person', component: GetAllPersonComponent}
+    { path: 'person', component: GetAllPersonComponent},
+    { path: 'person/adicionar', component: FormPersonComponent}
   ]}
 ];
 
