@@ -5,20 +5,23 @@ import { AngularMaterialModule } from "./angular-material/angular-material.modul
 import { DynamicTableComponent } from "./layout/table/dynamic-table.component";
 import { FilterComponent } from './layout/filter/filter.component';
 
-
-const modules = [
-    AngularMaterialModule,
-    FormsModule,
-    ReactiveFormsModule
-]
-
 @NgModule({
-    imports: modules,
-    exports: modules,
+    imports: [
+      AngularMaterialModule,
+      FormsModule,
+      ReactiveFormsModule
+  ],
+    exports:[
+      AngularMaterialModule,
+      FormsModule,
+      ReactiveFormsModule,
+      DynamicTableComponent,
+      FilterComponent
+  ],
     declarations: [
       HomeComponent,
       DynamicTableComponent,
-      FilterComponent
+      FilterComponent 
     ]
 })
 export class ComponentsModule { }
