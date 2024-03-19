@@ -14,6 +14,8 @@ import { LOCALE_ID } from '@angular/core';
 import localePt from '@angular/common/locales/pt';
 import { PersonModule } from './components/person/person.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const datePipeConfig =  {
   provide: DATE_PIPE_DEFAULT_OPTIONS,
@@ -22,6 +24,10 @@ const datePipeConfig =  {
     timezone: '+0000',
   }
 };
+
+const formfieldOutline = {
+  provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}
+}
 
 const localePipe = {
   provide: LOCALE_ID,
@@ -36,6 +42,7 @@ registerLocaleData(localePt, 'pt-BR');
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     ComponentsModule,
     PersonModule,
@@ -44,6 +51,7 @@ registerLocaleData(localePt, 'pt-BR');
   providers: [
     localePipe,
     datePipeConfig,
+    formfieldOutline,
     provideAnimationsAsync(),
     
   ],

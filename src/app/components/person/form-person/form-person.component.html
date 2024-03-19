@@ -1,8 +1,45 @@
-<div class="container">
-    <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
-      </mat-form-field>
-</div>
+<mat-card class="container">
+    <mat-card-content>
+        <form class="user-form" [formGroup]="personForm" (ngSubmit)="onSubmit()">
+            <mat-card-title class="titulo">Cadastro de Pessoas</mat-card-title>
+            <div class="user-form__row">
+                <mat-form-field class="user-form__item user-form__item-100">
+                    <mat-label>Nome Completo</mat-label>
+                    <input matInput formControlName="name">
+                </mat-form-field>
+            </div>
+
+            <div class="user-form__row">
+                <mat-form-field class="user-form__item user-form__item-50">
+                    <mat-label>Documento</mat-label>
+                    <input matInput formControlName="document">
+                </mat-form-field>
+                <mat-form-field class="user-form__item user-form__item-50">
+                    <mat-label>Cidade</mat-label>
+                    <input matInput formControlName="town">
+                </mat-form-field>
+                <mat-form-field class="user-form__item user-form__item-50">
+                    <mat-label>Cód. Alternativo</mat-label>
+                    <input matInput formControlName="alternativeIdentifier">
+                </mat-form-field>
+            </div>
+            <div class="user-form__row">
+                <mat-form-field class="user-form__item user-form__item-100">
+                    <mat-label>Observações</mat-label>
+                    <textarea matInput formControlName="observations"></textarea>
+                </mat-form-field>
+            </div>
+            <div class="user-form__row">
+                <div class="user-form__item ">
+                    <mat-checkbox formControlName="canBuy">Pode comprar</mat-checkbox>
+                    <mat-checkbox formControlName="enable">Ativo</mat-checkbox>
+                </div>
+            </div>
+            <div class="user-form__row">
+                <div class="user-form__item ">
+                    <button class="user-form__btnSalvar" mat-raised-button color="primary" type="submit">Salvar</button>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
