@@ -4,6 +4,7 @@ import { GetAllPersonComponent } from "./get-all-person/get-all-person.component
 import { PersonTabMenuComponent } from './person-tab-menu/person-tab-menu.component';
 import { FormPersonComponent } from "./form-person/form-person.component";
 import { PersonService } from "../../services/person.service";
+import { PersonDetailsComponent } from './person-details/person-details.component';
 
 @NgModule({
     imports: [ComponentsModule],
@@ -12,7 +13,8 @@ import { PersonService } from "../../services/person.service";
     declarations: [
         GetAllPersonComponent,
         PersonTabMenuComponent,
-        FormPersonComponent
+        FormPersonComponent,
+        PersonDetailsComponent
     ]
 })
 export class PersonModule {}

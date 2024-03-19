@@ -4,7 +4,7 @@
 
       <ng-container *ngFor="let columnProp of columnProps; let i = index" [matColumnDef]="columnProp">
         <th mat-header-cell *matHeaderCellDef> {{ columnNames[i] | uppercase }} </th>
-        <td mat-cell *matCellDef="let person">
+        <td mat-cell *matCellDef="let person" (click)="onPersonSelected(person)">
           <!-- altera o booleando para componente checkbox -->
           <ng-container *ngIf="isBoolean(person[columnProp]); else textData">
             <mat-checkbox [checked]="person[columnProp]"></mat-checkbox>

@@ -19,6 +19,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogContent, MatDialogTitle } from "@angular/material/dialog";
 
 
 const modules = [
@@ -41,7 +42,9 @@ const modules = [
     MatTabsModule,
     MatFormFieldModule,
     MatCheckboxModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogContent,
+    MatDialogTitle
 ]
 @NgModule({
     imports:modules,

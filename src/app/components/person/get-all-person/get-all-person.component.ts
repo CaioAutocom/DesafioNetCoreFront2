@@ -1,7 +1,15 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { IPerson } from '../../../interfaces/person.interface';
 import { PersonService } from '../../../services/person.service';
 import { Observable } from 'rxjs';
+import { PersonDetailsComponent } from '../person-details/person-details.component';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogTitle,
+  MatDialogContent,
+} from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-get-all-person',
@@ -24,13 +32,19 @@ export class GetAllPersonComponent  {
   columnProps: string[];
   columnNames: string[];
 
-  constructor(private personService: PersonService) {
-    this.persons$ = this.personService.getAllPerson();
+  constructor(private _personService: PersonService,
+              public _dialog: MatDialog) {
+    this.persons$ = this._personService.getAllPerson();
     this.columnProps = this.columnDefs.map(c => c.prop);
     this.columnNames = this.columnDefs.map(c => c.name);
   }
 
+
   isBoolean(value: any): boolean {
     return typeof value === 'boolean';
+  }
+
+  onPersonSelected(selectedPerson: IPerson){
+    const dialogRef = this._dialog.open(PersonDetailsComponent, {minWidth: '70%', data: selectedPerson});
   }
 }
