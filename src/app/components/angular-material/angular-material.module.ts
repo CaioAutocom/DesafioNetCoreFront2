@@ -17,6 +17,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 const modules = [
@@ -37,7 +38,8 @@ const modules = [
     MatTableModule,
     MatProgressBarModule,
     MatTabsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCheckboxModule
 ]
 @NgModule({
     imports:modules,

@@ -9,10 +9,28 @@ import { Observable } from 'rxjs';
   styleUrl: './get-all-person.component.scss'
 })
 export class GetAllPersonComponent  {
+ 
   persons$: Observable<IPerson[]>;
-  columns: string[] = ['Código', 'Nome', 'Documento', 'Cidade', 'Pode Comprar', 'Observações', 'Código Alternativo', 'Ativo'];
+  columnDefs = [
+    { prop: 'shortId', name: 'Cód.' },
+    { prop: 'name', name: 'Nome' },
+    { prop: 'document', name: 'Documento' },
+    { prop: 'town', name: 'Cidade' },
+    { prop: 'canBuy', name: 'Pode Comprar' },
+    { prop: 'observations', name: 'Observações' },
+    { prop: 'alternativeIdentifier', name: 'Cód. Alternativo' },
+    { prop: 'enable', name: 'Ativo' }
+  ];
+  columnProps: string[];
+  columnNames: string[];
 
-  constructor(private personService: PersonService){
+  constructor(private personService: PersonService) {
     this.persons$ = this.personService.getAllPerson();
+    this.columnProps = this.columnDefs.map(c => c.prop);
+    this.columnNames = this.columnDefs.map(c => c.name);
+  }
+
+  isBoolean(value: any): boolean {
+    return typeof value === 'boolean';
   }
 }
