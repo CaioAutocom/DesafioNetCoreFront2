@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-person-tab-menu',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './person-tab-menu.component.scss'
 })
 export class PersonTabMenuComponent {
-  background = 'primary'; 
-  links = ['person', 'adicionar', 'Tab 3'];
-  activeLink = this.links[0];
+
+  selectedTabIndex = signal(0);
+  
 }

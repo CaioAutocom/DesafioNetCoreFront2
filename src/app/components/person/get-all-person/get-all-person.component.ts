@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { IPerson } from '../../../interfaces/person.interface';
+import { PersonService } from '../../../services/person.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-get-all-person',
   templateUrl: './get-all-person.component.html',
   styleUrl: './get-all-person.component.scss'
 })
-export class GetAllPersonComponent {
-  columns: string[] = ['id', 'name', 'age'];
-  data: any[] = [
-    { id: 1, name: 'John Doe', age: 30 },
-    { id: 2, name: 'Jane Doe', age: 25 },
-    // mais dados...
-  ];
+export class GetAllPersonComponent  {
+  persons$: Observable<IPerson[]>;
+  columns: string[] = ['Código', 'Nome', 'Documento', 'Cidade', 'Pode Comprar', 'Observações', 'Código Alternativo', 'Ativo'];
+
+  constructor(private personService: PersonService){
+    this.persons$ = this.personService.getAllPerson();
+  }
 }

@@ -13,6 +13,7 @@ import { LOCALE_ID } from '@angular/core';
 
 import localePt from '@angular/common/locales/pt';
 import { PersonModule } from './components/person/person.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const datePipeConfig =  {
   provide: DATE_PIPE_DEFAULT_OPTIONS,
@@ -37,7 +38,8 @@ registerLocaleData(localePt, 'pt-BR');
     BrowserModule,
     AppRoutingModule,
     ComponentsModule,
-    PersonModule
+    PersonModule,
+    HttpClientModule
   ],
   providers: [
     localePipe,

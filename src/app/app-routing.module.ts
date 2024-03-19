@@ -7,6 +7,7 @@ import { FormPersonComponent } from './components/person/form-person/form-person
 
 
 const routes: Routes = [
+  {path: '', redirectTo: '/home/person', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent,
   children: [

@@ -1,4 +1,9 @@
+import { environment } from "../../environments/environment";
+
 export const API_ENDPOINTS = {
+    // Api url
+    
+    apiUrl : environment.apiUrl,
     // Auth
     newAccount: 'new-account',
     login: 'login',

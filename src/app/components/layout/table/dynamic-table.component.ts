@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './dynamic-table.component.scss'
 })
 export class DynamicTableComponent {
-  @Input({required: false}) columns: string[] = [];
-  @Input({required: false}) data: any[] = [];
+  @Input({required: true}) columns: string[] = [];
+  @Input({required: true}) data: any[] = [];
 }
 
 export interface PeriodicElement {

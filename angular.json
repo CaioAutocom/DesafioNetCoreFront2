@@ -44,6 +44,11 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/enviroments/enviroment.ts",
+                  "with": "src/enviroments/enviroment.prod.ts"
+                }],
               "budgets": [
                 {
                   "type": "initial",
@@ -59,6 +64,12 @@
               "outputHashing": "all"
             },
             "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]              ,
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
@@ -73,7 +84,8 @@
               "buildTarget": "DesafioNetCoreFront2:build:production"
             },
             "development": {
-              "buildTarget": "DesafioNetCoreFront2:build:development"
+              "buildTarget": "DesafioNetCoreFront2:build:development",
+         
             }
           },
           "defaultConfiguration": "development"
