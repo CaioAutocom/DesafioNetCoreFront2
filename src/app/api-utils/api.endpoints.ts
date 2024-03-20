@@ -5,8 +5,8 @@ export const API_ENDPOINTS = {
     
     apiUrl : environment.apiUrl,
     // Auth
-    newAccount: 'new-account',
-    login: 'login',
+    newAccount: '/api/new-account',
+    login: '/api/login',
     
     // Person
     addPeron: '/person',

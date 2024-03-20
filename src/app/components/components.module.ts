@@ -4,6 +4,8 @@ import { HomeComponent } from "./layout/home/home.component";
 import { AngularMaterialModule } from "./angular-material/angular-material.module";
 import { DynamicTableComponent } from "./layout/table/dynamic-table.component";
 import { FilterComponent } from './layout/filter/filter.component';
+import { GetAllProductsComponent } from './product/get-all-products/get-all-products.component';
+import { GetAllUnitsComponent } from './unit/get-all-units/get-all-units.component';
 
 @NgModule({
     imports: [
@@ -21,7 +23,9 @@ import { FilterComponent } from './layout/filter/filter.component';
     declarations: [
       HomeComponent,
       DynamicTableComponent,
-      FilterComponent 
+      FilterComponent,
+      GetAllProductsComponent,
+      GetAllUnitsComponent 
     ]
 })
 export class ComponentsModule { }

@@ -1,10 +1,10 @@
 export interface IPerson {
-    ShortId: string;
-    Name: string;
-    Document: string;
-    Town: string;
-    CanBuy: boolean;
-    Observations: string;
-    AlternativeIdentifier: string;
-    Enable: boolean;
+    shortid: string;
+    name: string;
+    document: string;
+    town: string;
+    canBuy: boolean;
+    observations: string;
+    alternativeIdentifier: string;
+    enable: boolean;
   }

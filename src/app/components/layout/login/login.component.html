@@ -8,6 +8,7 @@
     <mat-form-field >
      
       <input  type="text" matInput placeholder="Username" formControlName="username">  
+      <mat-error>O email informado é inválido.</mat-error>
     </mat-form-field>
   </p>
 
@@ -15,13 +16,10 @@
     <mat-icon appResolveIconAlignment  aria-hidden="false" fontIcon="key"></mat-icon>
     <mat-form-field>
       <input  type="password" matInput placeholder="Password" formControlName="password">
+      <mat-error>A senha precisa conter ao menos 6 caracteres.</mat-error>
+      <mat-error>Usuário ou senha inválidos.</mat-error>
     </mat-form-field>
   </p>
-
-  <p *ngIf="error" class="error">
-    {{ error }}
-  </p>
-
   <div class="button icon-text">
     
     <button type="submit" mat-raised-button color="primary"><mat-icon ResolveIconAlignmentDirective aria-hidden="false" fontIcon="lock_open"></mat-icon>Login</button>
