@@ -50,8 +50,15 @@ export class FormPersonComponent implements OnInit {
       alternativeIdentifier: formValue.alternativeIdentifier ?? '',
       enable: formValue.enable ?? true
     };
-
-    const r = this._personService.addPerson(person).subscribe(
+    
+    if(person.shortId){
+      this._personService.update(person).subscribe(
+        success => console.log('editou'),
+        error => console.log('error')
+      );
+      return
+    }
+    this._personService.addPerson(person).subscribe(
       success => console.log('foi'),
       error => console.log('error')
     );
