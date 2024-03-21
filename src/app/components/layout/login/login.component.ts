@@ -15,8 +15,8 @@ export class LoginComponent implements OnDestroy{
   @Output() submitEM = new EventEmitter();
 
   form: FormGroup = new FormGroup({
-    username: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
+    username: new FormControl('1@1.com', Validators.required),
+    password: new FormControl('123456', Validators.required),
   });
 
   private loginSubscription!: Subscription;
@@ -37,6 +37,7 @@ submit() {
 
     this.loginSubscription = this._authService.login(loginRequest).subscribe({
       next: (response) => {
+        localStorage.setItem('authToken', response.accessToken);
         this.router.navigateByUrl('/home/person');
       },
       error: (error) => {

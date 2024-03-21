@@ -45,6 +45,6 @@ export class GetAllPersonComponent  {
   }
 
   onPersonSelected(selectedPerson: IPerson){
-    const dialogRef = this._dialog.open(PersonDetailsComponent, {minWidth: '70%', data: selectedPerson});
+    const dialogRef = this._dialog.open(PersonDetailsComponent, {minWidth: '30%', data: selectedPerson});
   }
 }

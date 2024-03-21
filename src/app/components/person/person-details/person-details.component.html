@@ -1,4 +1,14 @@
-<h2 mat-dialog-title></h2>
 <mat-dialog-content>
-    {{person.document}}
+    <h2>{{person.name}}</h2>
+    <h2><strong>Cód.:</strong> {{person.shortid}}</h2>
+    <div><strong>Cidade:</strong> {{person.town}}</div>
+    <div><strong>Documento:</strong> {{person.document}}</div>
+    <div><strong>Pode Comprar:</strong> {{person.canBuy ? 'Sim' : 'Não'}}</div>
+    <div><strong>Observações:</strong> {{person.observations}}</div>
+    <div><strong>Identificador Alternativo:</strong> {{person.alternativeIdentifier}}</div>
+    <div><strong>Ativo:</strong> {{person.enable ? 'Sim' : 'Não'}}</div>
 </mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" (click)="onEdit(person)">Editar</button>
+    <button mat-raised-button color="warn" (click)="onDelete(person)">Excluir</button>
+</mat-dialog-actions>

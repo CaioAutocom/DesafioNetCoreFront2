@@ -18,7 +18,5 @@ export class AuthService {
       headers: { 'Content-Type': 'application/json' } 
     });
   }
-  setToken(token: string) {
-    localStorage.setItem('authToken', token);
-  }
+ 
 }

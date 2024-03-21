@@ -36,6 +36,9 @@ constructor(private _personService: PersonService) {}
       enable: formValue.enable ?? true
     };
 
-    this._personService.addPerson(person);
+    const r = this._personService.addPerson(person).subscribe(
+      success => console.log('foi'),
+      error => console.log('error')
+    );
     } 
   }
