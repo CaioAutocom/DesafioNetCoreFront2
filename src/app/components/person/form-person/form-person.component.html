@@ -1,7 +1,7 @@
 <mat-card class="container">
     <mat-card-content>
         <form class="user-form" [formGroup]="personForm" (ngSubmit)="onSubmit()">
-            <mat-card-title class="titulo">Cadastro de Pessoas</mat-card-title>
+            <mat-card-title class="titulo">{{title}}</mat-card-title>
             <div class="user-form__row">
                 <mat-form-field class="user-form__item user-form__item-100">
                     <mat-label>Nome Completo</mat-label>

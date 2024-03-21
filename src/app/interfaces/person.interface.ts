@@ -1,5 +1,5 @@
 export interface IPerson {
-    shortid: string;
+    shortId: string;
     name: string;
     document: string;
     town: string;

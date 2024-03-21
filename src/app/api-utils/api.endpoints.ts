@@ -13,7 +13,7 @@ export const API_ENDPOINTS = {
     updatePerson: '/person,',
     getAllPersons: '/person',
     deletePerson: '/person',
-    getPersonByShortId: '/get-by-shortid',
+    getPersonByShortId: '/person/get-by-shortid?shortid=',
     getClients: '/get-clients',
     
     // Product

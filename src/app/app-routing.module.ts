@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent,
   children: [
     { path: 'person', component: GetAllPersonComponent},
-    { path: 'person/adicionar', component: FormPersonComponent}
+    { path: 'person/adicionar', component: FormPersonComponent},
+    { path: 'person/editar/:id', component: FormPersonComponent}
   ]}
 ];
 

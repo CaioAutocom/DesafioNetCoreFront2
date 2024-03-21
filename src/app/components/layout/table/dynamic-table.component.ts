@@ -9,8 +9,8 @@ export class DynamicTableComponent implements OnChanges {
   @Input({required: true}) columns: string[] = [];
   @Input({required: true}) data: any[] = [];
   ngOnChanges(changes: SimpleChanges) {
-    console.log('Columns:', this.columns);
-    console.log('Data:', this.data);
+    // console.log('Columns:', this.columns);
+    // console.log('Data:', this.data);
   }
 }
 

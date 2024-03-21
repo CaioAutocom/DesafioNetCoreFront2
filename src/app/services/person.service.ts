@@ -13,6 +13,7 @@ export class PersonService {
   
     getAllPersonUrl = `${API_ENDPOINTS.apiUrl}${API_ENDPOINTS.getAllPersons}`;
     appPersonUrl = `${API_ENDPOINTS.apiUrl}${API_ENDPOINTS.addPeron}`;
+    getPersonByIdUrl =`${API_ENDPOINTS.apiUrl}${API_ENDPOINTS.getPersonByShortId}`;
 
     constructor(private http: HttpClient){}
 
@@ -26,6 +27,11 @@ export class PersonService {
             'Authorization': `Bearer ${API_TOKEN}`
         })
         return this.http.post(this.appPersonUrl, person, {headers}).pipe(take(1));
+    }
+
+    getByShortId(shortId: string) : Observable<IPerson>{
+        console.log(`${this.getPersonByIdUrl}${shortId}`);
+        return this.http.get<IPerson>(`${this.getPersonByIdUrl}${shortId}`).pipe(take(1));
     }
 
 }
