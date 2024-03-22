@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PersonService } from '../../../services/person.service';
 import { IPerson } from '../../../interfaces/person.interface';
 import { ActivatedRoute } from '@angular/router';
+import { SnackbarService } from '../../../services/helpers/snackbar.service';
 
 @Component({
   selector: 'app-form-person',
@@ -24,7 +25,8 @@ export class FormPersonComponent implements OnInit {
   });
 
   constructor(private readonly _personService: PersonService,
-    private readonly _route: ActivatedRoute) { }
+    private readonly _route: ActivatedRoute,
+    private readonly _snackBarService: SnackbarService) { }
 
   ngOnInit(): void {
     const personId = this._route.snapshot.params['id'];
@@ -53,8 +55,8 @@ export class FormPersonComponent implements OnInit {
     
     if(person.shortId){
       this._personService.update(person).subscribe(
-        success => console.log('editou'),
-        error => console.log('error')
+        success => this._snackBarService.openCustomSnackbar("Cadastro realizado com sucesso!", "sucess"),
+        error => this._snackBarService.openCustomSnackbar("Erro ao realizar o cadastro!")
       );
       return
     }

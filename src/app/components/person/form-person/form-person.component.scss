@@ -26,4 +26,16 @@
     }
 }
 
+.spinner-container {
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .spinner-container mat-progress-spinner {
+    width: 20px; /* Ajuste o tamanho do spinner conforme necessário */
+    height: 20px;
+     /* Adicione espaçamento entre o spinner e o texto do botão */
+  }
 

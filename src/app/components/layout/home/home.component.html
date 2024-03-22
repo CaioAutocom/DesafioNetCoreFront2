@@ -12,13 +12,16 @@
     </button>
     <mat-menu #userAccountMenu [overlapTrigger]="false" yPosition="below">
         <button mat-menu-item routerLink="#">
-            <mat-icon>person</mat-icon><span>Minha Conta</span>
+            <mat-icon>person</mat-icon>
+            <span>Minha Conta</span>
         </button>
         <button mat-menu-item routerLink="#">
-            <mat-icon>settings</mat-icon><span>Configurações</span>
+            <mat-icon>settings</mat-icon>
+            <span>Configurações</span>
         </button>
         <button mat-menu-item routerLink="#">
-            <mat-icon>help</mat-icon><span>Ajuda</span>
+            <mat-icon>help</mat-icon>
+            <span>Ajuda</span>
         </button>
         <mat-divider></mat-divider>
         <button mat-menu-item routerLink="/login">
@@ -30,32 +33,66 @@
 <mat-sidenav-container class="app-container">
     <mat-sidenav #sidenav mode="side" [class.mat-elevation-z4]="true" class="app-sidenav" opened="true">
         <mat-nav-list>
-
             <mat-expansion-panel [class.mat-elevation-z0]="true">
                 <mat-expansion-panel-header>
-                    Pessoas
+                    <mat-icon>diversity_3</mat-icon>
+                    <span>Pessoas</span>
                 </mat-expansion-panel-header>
-                <mat-nav-list>
-                    <a mat-list-item routerLink="/home/person">Consultar</a>
-                    <a mat-list-item routerLink="/home/person/adicionar">Adicionar</a>
-                    <a mat-list-item routerLink="#">Editar</a>
+                <mat-nav-list><a mat-list-item routerLink="/home/person/adicionar"><span><mat-icon>person_add</mat-icon></span>Adicionar</a>
+                    <a mat-list-item routerLink="/home/person"><span><mat-icon>search</mat-icon></span>Consultar</a>
+                    <a mat-list-item routerLink="/home/person"><span><mat-icon>search</mat-icon></span>Consultar por Id</a>
+                    <a mat-list-item routerLink="#"><span><mat-icon>person_edit</mat-icon></span>Editar</a>
+                    <a mat-list-item routerLink="#"><span><mat-icon>person_remove</mat-icon></span>Excluir</a>
                 </mat-nav-list>
             </mat-expansion-panel>
             <mat-expansion-panel [class.mat-elevation-z0]="true" >
-      
                 <mat-expansion-panel-header>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+                    <mat-icon>inventory_2</mat-icon>
                     <span style="bottom: 0;">Produtos</span>
                 </mat-expansion-panel-header>
                 <mat-nav-list>
-                    <a mat-list-item routerLink="/home/table">Consultar</a>
-                    <a mat-list-item routerLink="#">Adicionar</a>
-                    <a mat-list-item routerLink="#">Editar</a>
+                    <mat-nav-list><a mat-list-item routerLink="/home/person/adicionar"><span><mat-icon>add</mat-icon></span>Adicionar</a>
+                        <a mat-list-item routerLink="/home/person"><span><mat-icon>search</mat-icon></span>Consultar</a>
+                        <a mat-list-item routerLink="/home/person"><span><mat-icon>search</mat-icon></span>Consultar por Id</a>
+                        <a mat-list-item routerLink="#"><span><mat-icon>edit</mat-icon></span>Editar</a>
+                        <a mat-list-item routerLink="#"><span><mat-icon>delete</mat-icon></span>Excluir</a>
+                    </mat-nav-list>
                 </mat-nav-list>
             </mat-expansion-panel>
+            <mat-expansion-panel [class.mat-elevation-z0]="true" >
+                <mat-expansion-panel-header>
+                    <mat-icon>square_foot</mat-icon>
+                    <span style="bottom: 0;">Unidades</span>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <mat-nav-list><a mat-list-item routerLink="/home/person/adicionar"><span><mat-icon>add</mat-icon></span>Adicionar</a>
+                        <a mat-list-item routerLink="/home/person"><span><mat-icon>search</mat-icon></span>Consultar</a>
+                        <a mat-list-item routerLink="/home/person"><span><mat-icon>search</mat-icon></span>Consultar por Id</a>
+                        <a mat-list-item routerLink="#"><span><mat-icon>search</mat-icon></span>Editar</a>
+                        <a mat-list-item routerLink="#"><span><mat-icon>search</mat-icon></span>Excluir</a>
+                    </mat-nav-list>
+                </mat-nav-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel [class.mat-elevation-z0]="true" >
+                <mat-expansion-panel-header>
+                    <mat-icon>group</mat-icon>
+                    <span style="bottom: 0;">Usuarios</span>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <mat-nav-list><a mat-list-item routerLink="/home/person/adicionar"><span><mat-icon>search</mat-icon></span>Adicionar</a>
+                        <a mat-list-item routerLink="/home/person"><span><mat-icon>search</mat-icon></span>Consultar</a>
+                        <a mat-list-item routerLink="/home/person"><span><mat-icon>search</mat-icon></span>Consultar por Id</a>
+                        <a mat-list-item routerLink="#"><span><mat-icon>search</mat-icon></span>Editar</a>
+                        <a mat-list-item routerLink="#"><span><mat-icon>search</mat-icon></span>Excluir</a>
+                    </mat-nav-list>
+                </mat-nav-list>
+            </mat-expansion-panel>
+
             <div class="align-bottom">
                 <mat-divider></mat-divider>
-                <button mat-button [matMenuTriggerFor]="menu"><mat-icon>account_circle</mat-icon>ADMINISTRADOR</button>
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon>lock</mat-icon>
+                    <span>ADMINISTRADOR</span></button>
                 <mat-menu #menu="matMenu">
                     <button mat-menu-item><a mat-list-item routerLink="#"><mat-icon >settings</mat-icon><span>Conta</span></a></button>
                     <button mat-menu-item><a mat-list-item routerLink="#"><mat-icon >exit_to_app</mat-icon>Sair</a></button>

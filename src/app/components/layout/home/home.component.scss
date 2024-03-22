@@ -21,7 +21,14 @@
     bottom: 10px;
     width: 100%;
 }
-
+::ng-deep .mat-content{
+    align-items: flex-end;
+    margin: 10px;
+}
+::ng-deep span .mat-content{
+  
+    margin-left: 10px;
+}
 button{
     width: 100%;
 }
