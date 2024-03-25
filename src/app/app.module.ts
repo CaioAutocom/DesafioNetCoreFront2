@@ -13,9 +13,11 @@ import { LOCALE_ID } from '@angular/core';
 
 import localePt from '@angular/common/locales/pt';
 import { PersonModule } from './components/person/person.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ApiInterceptor } from './components/interceptors/api.interceptor';
+import { SnackbarService } from './services/helpers/snackbar.service';
 
 const datePipeConfig =  {
   provide: DATE_PIPE_DEFAULT_OPTIONS,
@@ -32,6 +34,11 @@ const formfieldOutline = {
 const localePipe = {
   provide: LOCALE_ID,
   useValue: 'pt-BR'
+}
+const apiInterceptor = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: ApiInterceptor,
+  multi: true
 }
 registerLocaleData(localePt, 'pt-BR');
 @NgModule({
@@ -52,8 +59,9 @@ registerLocaleData(localePt, 'pt-BR');
     localePipe,
     datePipeConfig,
     formfieldOutline,
+    apiInterceptor,
     provideAnimationsAsync(),
-    
+    SnackbarService
   ],
   bootstrap: [AppComponent]
 })
