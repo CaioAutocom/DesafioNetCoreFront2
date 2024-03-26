@@ -16,15 +16,15 @@ import { SnackbarService } from '../../services/helpers/snackbar.service';
 export class ApiInterceptor implements HttpInterceptor {
 
   constructor(private _snackbarService: SnackbarService) {}
-
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === 0) {
-          this._snackbarService.openCustomSnackbar('A API está offline! Não será possível prosseguir.');
+          this._snackbarService.openCustomSnackbar('A API está offline! Não será possível prosseguir.', '', 20000);
         }
         return throwError(error);
       })
     );
   }
+  
 }

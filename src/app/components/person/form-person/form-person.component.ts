@@ -2,8 +2,9 @@ import { Component, Input, OnInit, input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PersonService } from '../../../services/person.service';
 import { IPerson } from '../../../interfaces/person.interface';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SnackbarService } from '../../../services/helpers/snackbar.service';
+import { catchError, tap } from 'rxjs';
 
 @Component({
   selector: 'app-form-person',
@@ -26,6 +27,7 @@ export class FormPersonComponent implements OnInit {
 
   constructor(private readonly _personService: PersonService,
     private readonly _route: ActivatedRoute,
+    private readonly _router: Router,
     private readonly _snackBarService: SnackbarService) { }
 
   ngOnInit(): void {
@@ -37,6 +39,15 @@ export class FormPersonComponent implements OnInit {
         this.personForm.patchValue(person);
       });
     }
+  }
+  exibeSnackbar(message: string): any {
+    this._snackBarService.openCustomSnackbar(message);
+  }
+  redirecionar() {
+    this._router.navigateByUrl('/home/person')
+  }
+  limparFormulario() {
+    this.personForm.reset();
   }
 
   onSubmit() {
@@ -53,16 +64,33 @@ export class FormPersonComponent implements OnInit {
       enable: formValue.enable ?? true
     };
     
-    if(person.shortId){
-      this._personService.update(person).subscribe(
-        success => this._snackBarService.openCustomSnackbar("Cadastro realizado com sucesso!", "sucess"),
-        error => this._snackBarService.openCustomSnackbar("Erro ao realizar o cadastro!")
-      );
-      return
+    if (person.shortId) {
+      this._personService.update(person).pipe(
+        tap(success => this.exibeSnackbar("Registro atualizado! Redirecionando...")),
+        catchError(error => this.exibeSnackbar("Erro ao atualizar o cadastro."))
+      ).subscribe(() => {
+        setTimeout(() => {
+          this.limparFormulario();
+          this.redirecionar();
+        }, 3000);
+      });
+    
+      return;
     }
-    this._personService.addPerson(person).subscribe(
-      success => console.log('foi'),
-      error => console.log('error')
-    );
+    
+    this._personService.addPerson(person).pipe(
+      tap(success => this.exibeSnackbar("Cadastro realizado! Redirecionando...")),
+      catchError(error => this.exibeSnackbar("Erro ao efetuar o cadastro"))
+    ).subscribe(() => {
+      setTimeout(() => {
+        this.limparFormulario();
+        this.redirecionar();
+      }, 3000);
+    });
   }
 }
+
+
+  
+
+

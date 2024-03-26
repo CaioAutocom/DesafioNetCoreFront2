@@ -10,7 +10,7 @@ export const API_ENDPOINTS = {
     
     // Person
     addPeron: '/person',
-    updatePerson: '/person,',
+    updatePerson: '/person',
     getAllPersons: '/person',
     deletePerson: '/person',
     getPersonByShortId: '/person/get-by-shortid?shortid=',
