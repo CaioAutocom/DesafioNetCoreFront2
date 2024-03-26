@@ -38,8 +38,6 @@ export class GetAllPersonComponent  {
     this.columnProps = this.columnDefs.map(c => c.prop);
     this.columnNames = this.columnDefs.map(c => c.name);
   }
-
-
   isBoolean(value: any): boolean {
     return typeof value === 'boolean';
   }

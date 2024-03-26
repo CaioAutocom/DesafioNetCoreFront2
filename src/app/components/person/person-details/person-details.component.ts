@@ -22,5 +22,6 @@ export class PersonDetailsComponent {
     this._router.navigate(['/home/person/editar', shortId], {relativeTo: this._route})
     this.dialog.closeAll();
   };
-  onDelete(person: IPerson){};
+  onDelete(person: IPerson){
+  };
 }

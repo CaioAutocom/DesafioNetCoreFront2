@@ -9,7 +9,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
   
     constructor(private _snackBar: MatSnackBar) { }
   
-    openCustomSnackbar(message: string, type: string = 'success', duration: number = 3000) {
+    openCustomSnackbar(message: string, type: string = 'success', duration: number = 2000) {
         this._snackBar.openFromComponent(CustomSnackBarComponent, {
           data: { message, type },
           duration: duration

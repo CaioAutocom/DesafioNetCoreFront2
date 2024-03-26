@@ -28,10 +28,10 @@ export class CustomSnackBarComponent implements OnInit {
     // }
   }
   ngOnInit(): void {
-    const durationInSeconds = 3;
+    const durationInSeconds = 2;
     this.snackbarClass = this.data.type;
     const interval = setInterval(() => {
-      this.progressValue -= 100 / (durationInSeconds * 10);
+      this.progressValue -= 100 / (durationInSeconds * 8.8);
       if (this.progressValue <= 0) {
         clearInterval(interval);
       }

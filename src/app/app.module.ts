@@ -16,7 +16,7 @@ import { PersonModule } from './components/person/person.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ApiInterceptor } from './components/interceptors/api.interceptor';
+import { ApiErrorsInterceptor } from './interceptors/api-erros.interceptor';
 import { SnackbarService } from './services/helpers/snackbar.service';
 
 const datePipeConfig =  {
@@ -37,7 +37,7 @@ const localePipe = {
 }
 const apiInterceptor = {
   provide: HTTP_INTERCEPTORS,
-  useClass: ApiInterceptor,
+  useClass: ApiErrorsInterceptor,
   multi: true
 }
 registerLocaleData(localePt, 'pt-BR');

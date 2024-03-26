@@ -49,7 +49,9 @@ export class FormPersonComponent implements OnInit {
   limparFormulario() {
     this.personForm.reset();
   }
-
+  logarErro(error: any): any {
+    console.log(error.status);
+  }
   onSubmit() {
     const formValue = this.personForm.value;
 
@@ -67,14 +69,13 @@ export class FormPersonComponent implements OnInit {
     if (person.shortId) {
       this._personService.update(person).pipe(
         tap(success => this.exibeSnackbar("Registro atualizado! Redirecionando...")),
-        catchError(error => this.exibeSnackbar("Erro ao atualizar o cadastro."))
+        catchError(error => this.logarErro(error))
       ).subscribe(() => {
         setTimeout(() => {
           this.limparFormulario();
           this.redirecionar();
-        }, 3000);
+        }, 2000);
       });
-    
       return;
     }
     
@@ -85,12 +86,16 @@ export class FormPersonComponent implements OnInit {
       setTimeout(() => {
         this.limparFormulario();
         this.redirecionar();
-      }, 3000);
+      }, 2000);
     });
+
+ 
   }
 }
 
 
   
 
+
+ 
 

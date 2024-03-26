@@ -45,7 +45,7 @@ export class PersonService {
         return this.http.put<IPerson>(`${this.updatePersonUrl}`, person, { headers }).pipe(take(1));
       }
     getByShortId(shortId: string) : Observable<IPerson>{
-        console.log(`${this.getPersonByIdUrl}${shortId}`);
+        console.log(`${this.getPersonByIdUrl}${shortId}`); 
         return this.http.get<IPerson>(`${this.getPersonByIdUrl}${shortId}`).pipe(take(1));
     }
 
