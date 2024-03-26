@@ -19,7 +19,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatDialogActions, MatDialogContent, MatDialogTitle } from "@angular/material/dialog";
+import { MatDialogActions, MatDialogContent, MatDialogModule, MatDialogTitle } from "@angular/material/dialog";
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
@@ -49,7 +49,8 @@ const modules = [
     MatDialogTitle,
     MatDialogActions,
     MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule
 ]
 @NgModule({
     imports:modules,

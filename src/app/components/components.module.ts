@@ -7,6 +7,7 @@ import { FilterComponent } from './layout/filter/filter.component';
 import { GetAllProductsComponent } from './product/get-all-products/get-all-products.component';
 import { GetAllUnitsComponent } from './unit/get-all-units/get-all-units.component';
 import { CustomSnackBarComponent } from './utils/custom-snack-bar/custom-snack-bar.component';
+import { CustomDialogComponent } from './utils/custom-dialog/custom-dialog.component';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { CustomSnackBarComponent } from './utils/custom-snack-bar/custom-snack-b
       FilterComponent,
       GetAllProductsComponent,
       GetAllUnitsComponent,
-      CustomSnackBarComponent 
+      CustomSnackBarComponent,
+      CustomDialogComponent 
     ]
 })
 export class ComponentsModule { }
