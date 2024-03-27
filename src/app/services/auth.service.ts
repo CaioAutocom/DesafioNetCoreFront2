@@ -12,8 +12,6 @@ export class AuthService {
 
   login(login: ILoginRequest): Observable<any> {
     const credentialsJSON = JSON.stringify(login);
-
-    console.log(credentialsJSON); 
     return this.http.post<any>(`${API_ENDPOINTS.apiUrl}${API_ENDPOINTS.login}`, credentialsJSON, {
       headers: { 'Content-Type': 'application/json' } 
     });

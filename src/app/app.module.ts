@@ -18,6 +18,7 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ApiErrorsInterceptor } from './interceptors/api-erros.interceptor';
 import { SnackbarService } from './services/helpers/snackbar.service';
+import { TokenInjectorInterceptor } from './interceptors/token-injector.interceptor';
 
 const datePipeConfig =  {
   provide: DATE_PIPE_DEFAULT_OPTIONS,
@@ -35,11 +36,17 @@ const localePipe = {
   provide: LOCALE_ID,
   useValue: 'pt-BR'
 }
-const apiInterceptor = {
-  provide: HTTP_INTERCEPTORS,
-  useClass: ApiErrorsInterceptor,
-  multi: true
-}
+const Interceptors = [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: ApiErrorsInterceptor,
+    multi: true
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInjectorInterceptor,
+    multi: true
+  },
+]
 registerLocaleData(localePt, 'pt-BR');
 @NgModule({
   declarations: [
@@ -59,7 +66,7 @@ registerLocaleData(localePt, 'pt-BR');
     localePipe,
     datePipeConfig,
     formfieldOutline,
-    apiInterceptor,
+    Interceptors,
     provideAnimationsAsync(),
     SnackbarService
   ],
