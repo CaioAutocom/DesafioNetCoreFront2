@@ -79,7 +79,7 @@ export class FormPersonComponent implements OnInit {
       return;
     }
     
-    this._personService.addPerson(person).pipe(
+    this._personService.add(person).pipe(
       tap(success => this.exibeSnackbar("Cadastro realizado! Redirecionando...")),
       catchError(error => this.exibeSnackbar("Erro ao efetuar o cadastro"))
     ).subscribe(() => {

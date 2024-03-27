@@ -34,7 +34,7 @@ export class GetAllPersonComponent  {
 
   constructor(private _personService: PersonService,
               public _dialog: MatDialog) {
-    this.persons$ = this._personService.getAllPerson();
+    this.persons$ = this._personService.getAll();
     this.columnProps = this.columnDefs.map(c => c.prop);
     this.columnNames = this.columnDefs.map(c => c.name);
   }

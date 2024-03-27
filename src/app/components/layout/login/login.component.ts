@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
-import { ILoginRequest } from '../../../interfaces/login.request.interface';
+import { ILoginRequest } from '../../../interfaces/requests/login.request.interface';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 

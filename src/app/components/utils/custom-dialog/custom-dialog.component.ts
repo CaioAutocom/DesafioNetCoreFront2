@@ -23,7 +23,6 @@ export class CustomDialogComponent {
   onClose(): void {
     this.dialogRef.close();
   }
-  
 }
 
 

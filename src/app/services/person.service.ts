@@ -1,8 +1,9 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { IPerson } from "../interfaces/person.interface";
-import { Observable, take } from "rxjs";
+import { Observable, first, take } from "rxjs";
 import { API_ENDPOINTS } from "../api-utils/api.endpoints";
+import { IDeletePersonRequest } from "../interfaces/requests/delete-person.request.interface";
 
 
 @Injectable({
@@ -17,20 +18,21 @@ export class PersonService {
     
     constructor(private http: HttpClient){}
 
-    getAllPerson() : Observable<IPerson[]>{
+    getAll() : Observable<IPerson[]>{
         return this.http.get<IPerson[]>(this.getAllPersonUrl);
     }
-
-    addPerson(person: IPerson) {
+    getByShortId(shortId: string) : Observable<IPerson>{
+        return this.http.get<IPerson>(`${this.getPersonByIdUrl}${shortId}`).pipe(take(1));
+    }
+    add(person: IPerson) {
         return this.http.post(this.appPersonUrl, person);
     }
 
     update(person: IPerson): Observable<IPerson> {
         return this.http.put<IPerson>(`${this.updatePersonUrl}`, person).pipe(take(1));
-      }
-    getByShortId(shortId: string) : Observable<IPerson>{
-        console.log(`${this.getPersonByIdUrl}${shortId}`); 
-        return this.http.get<IPerson>(`${this.getPersonByIdUrl}${shortId}`).pipe(take(1));
     }
-
+    
+    delete(request: IDeletePersonRequest) : Observable<any> {
+        return this.http.delete(`${this.deletePersonByIdUrl}`, { body: request });
+    }
 }

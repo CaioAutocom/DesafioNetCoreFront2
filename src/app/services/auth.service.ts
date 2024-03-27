@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { API_ENDPOINTS } from '../api-utils/api.endpoints';
-import { ILoginRequest } from '../interfaces/login.request.interface';
+import { ILoginRequest } from '../interfaces/requests/login.request.interface';
 
 @Injectable({
   providedIn: 'root'
