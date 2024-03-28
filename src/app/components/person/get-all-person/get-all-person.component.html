@@ -1,22 +1,30 @@
-<div class="table">
-  <div class="mat-elevation-z0">
-    <table mat-table [dataSource]="(persons$ | async) || []" class="mat-elevation-z1">
-
-      <ng-container *ngFor="let columnProp of columnProps; let i = index" [matColumnDef]="columnProp">
-        <th mat-header-cell *matHeaderCellDef> {{ columnNames[i] | uppercase }} </th>
-        <td mat-cell *matCellDef="let person" (dblclick)="onPersonSelected(person)">
-          <!-- altera o booleando para componente checkbox -->
-          <ng-container *ngIf="isBoolean(person[columnProp]); else textData">
-            <mat-checkbox [checked]="person[columnProp]" disabled=""></mat-checkbox>
-          </ng-container>
-          <ng-template #textData>
-            {{ person[columnProp] }}
-          </ng-template>
-        </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="columnProps"></tr>
-      <tr mat-row *matRowDef="let row; columns: columnProps;"></tr>
-    </table>
+<ng-container *ngIf="(persons$ | async)?.length; else noData">
+  <div class="table">
+    <div class="mat-elevation-z0">
+      <table mat-table [dataSource]="(persons$ | async) || []" class="mat-elevation-z1">
+  
+        <ng-container *ngFor="let columnProp of columnProps; let i = index" [matColumnDef]="columnProp">
+          <th mat-header-cell *matHeaderCellDef> {{ columnNames[i] | uppercase }} </th>
+          <td mat-cell *matCellDef="let person" (dblclick)="onPersonSelected(person)">
+            <!-- altera o booleando para componente checkbox -->
+            <ng-container *ngIf="isBoolean(person[columnProp]); else textData">
+              <mat-checkbox [checked]="person[columnProp]" disabled=""></mat-checkbox>
+            </ng-container>
+            <ng-template #textData>
+              {{ person[columnProp] }}
+            </ng-template>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="columnProps"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnProps;"></tr>
+      </table>
+    </div>
   </div>
-</div>
+  
+</ng-container>
+
+<ng-template #noData>
+  <h1>Não Há dados para serem exibidos.</h1>
+</ng-template>
+
